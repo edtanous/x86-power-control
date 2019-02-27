@@ -14,7 +14,16 @@
 // limitations under the License.
 */
 
-#pragma once
-int configGpio(const int32_t gpioNum, const std::string gpioDirection, int *fd,
-               sdbusplus::bus::bus &bus);
-int closeGpio(int fd);
+#include "power_button.hpp"
+
+void PowerButton::simPress()
+{
+    pressed();
+    return;
+}
+
+void PowerButton::simLongPress()
+{
+    pressedLong();
+    return;
+}

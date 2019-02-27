@@ -3,6 +3,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gpio/inc)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/i2c/inc)
 
 add_subdirectory(gpio)
-add_subdirectory(power-control)
+add_subdirectory(i2c)
+add_subdirectory(buttons)
+add_subdirectory(chassis-control)
+add_subdirectory(power-control-x86)

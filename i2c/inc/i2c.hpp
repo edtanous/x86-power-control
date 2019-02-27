@@ -15,6 +15,11 @@
 */
 
 #pragma once
-int configGpio(const int32_t gpioNum, const std::string gpioDirection, int *fd,
-               sdbusplus::bus::bus &bus);
-int closeGpio(int fd);
+#include <cstdint>
+
+extern "C" {
+#include <i2c/smbus.h>
+#include <linux/i2c-dev.h>
+}
+
+int i2cSet(uint8_t bus, uint8_t slaveAddr, uint8_t regAddr, uint8_t value);

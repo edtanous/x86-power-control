@@ -14,7 +14,10 @@
 // limitations under the License.
 */
 
-#pragma once
-int configGpio(const int32_t gpioNum, const std::string gpioDirection, int *fd,
-               sdbusplus::bus::bus &bus);
-int closeGpio(int fd);
+#include "reset_button.hpp"
+
+void ResetButton::simPress()
+{
+    pressed();
+    return;
+}
